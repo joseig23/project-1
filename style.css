@@ -1,0 +1,384 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --main-color: #fff;
+    --hover-color: #b5cd42;
+    --text-color: #000000;
+    --palette-color1: #3a0fe5;
+    --palette-color2: #66c4ff;
+    --palette-color3: #aee937;
+    --palette-color4: #ffd300;
+    --background-color: #fff;
+    --big-font: 5rem;
+    --h2-font: 2.25rem;
+    --paragraph-font: 0.9rem;
+}
+
+*::selection {
+    background: var(--main-color);
+    color: #fff;
+}
+
+body  {
+    color: var(--text-color);
+    background: var(--background-color);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 170px;
+    background: var(--background-color);
+}
+
+.logo {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+
+.rc-header-navbar {
+    display: flex;
+}
+
+.rc-header-navbar a {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    font-weight: 500;
+}
+
+.rc-header-navbar a:hover {
+    color: var(--palette-color2);
+    transition: .4s;
+}
+
+#menu-icon {
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
+
+section {
+    padding: 70px 17%;
+}
+
+
+
+.rc-home {
+    width: 110%;
+    min-height: 70vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10rem;
+    align-items: center;
+}
+
+.rc-home-img img{
+    max-width: 100%;
+    max-height: 600px;
+    height: auto;
+}
+
+.home-text h1 {
+    font-size: var(--big-font);
+    color: var(--text-color);
+    line-height: 100%;
+}
+
+.home-text h2 {
+    font-size: var(--h2-font);
+    margin: 1rem 0 2rem;
+    line-height: 100%;
+}
+
+.rc-home-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--palette-color1);
+    color: var(--main-color);
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.rc-home-btn:active {
+    color: white;
+    box-shadow: 0 0.2rem #dfd9d9;
+    transform: translateY(0.2rem);
+   }
+   
+.rc-home-btn:hover:not(:disabled) {
+    background: var(--palette-color2);
+    color: white;
+   }
+   
+.rc-home-btn:disabled {
+    cursor: auto;
+    color: grey;
+   }
+
+.rc-products {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-gap: 1.5rem;
+    align-items: center;
+}
+
+.rc-products-img img {
+    max-width: 100%;
+    width: 480px;
+    height: auto;
+}
+
+.rc-products-text span {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.rc-products-text h2 {
+    font-size: var(--h2-font);
+    line-height: 100%;
+}
+
+.rc-products-text p {
+    margin: 0.8rem 0 1.8rem;
+    line-height: 1.7;
+}
+
+.rc-courses {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-gap: 1.5rem;
+    align-items: center;
+}
+
+.rc-courses-img img {
+    max-width: 100%;
+    width: 480px;
+    height: auto;
+}
+
+.rc-courses-text span {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.rc-courses-text h2 {
+    font-size: var(--h2-font);
+    line-height: 100%;
+}
+
+.rc-courses-text p {
+    margin: 0.8rem 0 1.8rem;
+    line-height: 1.7;
+}
+
+.rc-carrusel-products-btn {
+    width: 6.5em;
+    height: 2.3em;
+    margin: 0.5em;
+    background: var(--palette-color1);
+    color: white;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+   }
+   
+   button:hover {
+    color: black;
+   }
+   
+   button:after {
+    content: "";
+    background: var(--palette-color3);
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+   }
+   
+   button:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+   }
+
+.rc-heading {
+    text-align: center;
+}
+
+.rc-heading span {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.rc-heading h2 {
+    font-size: var(--h2-font);
+}
+
+.rc-carrusel-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    grid-gap: 1.5rem;
+    align-items: center;
+}
+
+.rc-box {
+    position: relative;
+    margin-top: 4rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--palette-color2);
+    padding: 20px;
+    border-radius: 0.5rem;
+}
+
+.rc-box-img {
+    width: 220px;
+    height: 220px;
+}
+
+.rc-box-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.rc-box h2 {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.rc-box h3 {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 4px 0 10px;
+}
+
+
+.rc-main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.rc-footer {
+    padding: 10px 0;
+}
+
+.rc-col {
+    width: 25%;
+}
+
+.rc-col h4 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 25px;   
+    position: relative; 
+}
+
+.rc-col ul li:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.rc-col ul li a{
+    color: #66c4ff;
+    font-size: 1.1rem;
+    display: block;
+    text-transform: capitalize;
+    transition: .4s;
+}
+
+.rc-col .rc-social {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 1560px) {
+    header {
+        padding: 15px 40px;
+    }
+    :root {
+        --big-font:3.5rem;
+        --h2-font:2rem;
+    }
+}
+
+@media (max-width: 1140px) {
+    section {
+        padding: 50px 8%;
+    }
+    #menu-icon {
+        display: initial;
+        color: var(--text-color);
+    }
+    header .rc-header-navbar{
+        position: absolute;
+        top: -500px;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background-color:#dfd9d9;
+        transition: .3s;
+    }
+    header .rc-header-navbar.active{
+        top: 70px;
+    }
+    .rc-header-navbar a{
+        padding: 1.5rem;
+        display: block;
+    }
+    .rc-col{
+        width: 50%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 720px) {
+    header {
+        padding: 10px 16px;
+    }
+    .rc-home{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    section {
+        padding: 100px 10%;
+    }
+
+}
+
+@media (max-width: 575px) {
+    .rc-col {
+        width: 100%;
+    }
+}
