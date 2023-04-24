@@ -32,51 +32,51 @@ body  {
     background: var(--background-color);
 }
 
-header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 30px 170px;
-    background: var(--background-color);
-}
-
-.logo {
-    color: var(--text-color);
-    font-weight: 600;
-    font-size: 2.5rem;
-}
-
-.rc-header-navbar {
-    display: flex;
-}
-
-.rc-header-navbar a {
-    color: var(--text-color);
-    font-size: 1.1rem;
-    padding: 10px 20px;
-    font-weight: 500;
-}
-
-.rc-header-navbar a:hover {
-    color: var(--palette-color2);
-    transition: .4s;
-}
-
-#menu-icon {
-    font-size: 2rem;
-    cursor: pointer;
-    display: none;
-}
-
 section {
     padding: 70px 17%;
 }
 
+.rc-navbar {
+    font-size: 1.2em;
+    border: 2px solid var(--background-color);
+}
+
+.rc-header-navbar {
+    list-style-type: none;
+    display: none;  
+}
+
+.rc-nav-link, .logo {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.rc-header-navbar li {
+    text-align: center;
+    margin: 15px auto;
+}
+
+.logo {
+    display: inline-block;
+    font-size: 2em;
+    margin: 20px 0 0 20px;
+}
+
+.rc-navbar-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 1.8em;
+}
+
+#rc-Toggle {
+    display: none;
+}
+
+#rc-Toggle:checked +ul.rc-header-navbar {
+    display: block;
+}
 
 
 .rc-home {
@@ -321,64 +321,208 @@ section {
     justify-content: space-between;
 }
 
-@media (max-width: 1560px) {
-    header {
-        padding: 15px 40px;
+
+
+@media screen and (min-width: 768px) {
+    .rc-navbar {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 0;
+        height: 80px;
+        align-items: center;
     }
-    :root {
-        --big-font:3.5rem;
-        --h2-font:2rem;
+
+    .rc-header-navbar {
+        display: flex;
+        margin-right: 30px;
+
+    }
+
+    #rc-Toggle:checked +ul.rc-header-navbar {
+        display: flex;
+    }
+
+    .rc-header-navbar li {
+        margin: 0;
+    }
+
+    .rc-nav-link {
+        margin-left: 40px;
+    }
+
+    .logo {
+        margin-top: 0;
+        font-size: 20px;
+    }
+
+    .rc-navbar-toggle {
+        display: none;
     }
 }
 
-@media (max-width: 1140px) {
+@media screen and (min-width: 375px) and (max-width: 768px) {
+    .rc-navbar {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0;
+    height: 80px;
+    align-items: center;
+    }
+
+    .rc-header-navbar {
+        display: flex;
+        margin-right: 30px;
+    
+    }
+    
+    #rc-Toggle:checked +ul.rc-header-navbar {
+        display: flex;
+    }
+    
+    .rc-header-navbar li {
+        margin: 0;
+    }
+    
+    .rc-nav-link {
+        margin-left: 40px;
+    }
+    
+    .logo {
+        margin-top: 0;
+        font-size: 20px;
+    }
+    
+    .rc-navbar-toggle {
+        display: none;
+    }
+    
     section {
-        padding: 50px 8%;
+      padding: 70px 10px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 70px 10px;
     }
-    #menu-icon {
-        display: initial;
-        color: var(--text-color);
+
+    .rc-home {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 5rem;
+      text-align: center;
+      width: 100%;
+      min-height: 100vh;
     }
-    header .rc-header-navbar{
-        position: absolute;
-        top: -500px;
-        left: 0;
-        right: 0;
+
+    .rc-home-img img {
+      max-width: 100%;
+      max-height: 300px;
+      height: auto;
+    }
+
+    .home-text h1 {
+      font-size: 3rem;
+      margin: 2rem 0;
+    }
+
+    .home-text h2 {
+      font-size: 1.5rem;
+      margin: 1rem 0 2rem;
+    }
+
+    .rc-products,
+    .rc-courses {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .rc-products-img img,
+    .rc-courses-img img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+    }
+    
+    .rc-main {
         display: flex;
         flex-direction: column;
-        text-align: center;
-        background-color:#dfd9d9;
-        transition: .3s;
-    }
-    header .rc-header-navbar.active{
-        top: 70px;
-    }
-    .rc-header-navbar a{
-        padding: 1.5rem;
-        display: block;
-    }
-    .rc-col{
-        width: 50%;
-        margin-bottom: 10px;
-    }
-}
+        }
+        
+        .rc-col {
+        margin-bottom: 1rem;
+        }
+        
+        .rc-col:last-child {
+        margin-bottom: 0;
+        }
+        
+        .rc-footer ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        }
+        
+        .rc-footer h4 {
+        margin-bottom: 0.5rem;
+        }
+    }    
 
-@media (max-width: 720px) {
-    header {
-        padding: 10px 16px;
-    }
-    .rc-home{
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+@media screen and (max-width: 375px) {
     section {
-        padding: 100px 10%;
+      padding: 70px 10px;
+    }
+    .rc-home {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 5rem;
+      text-align: center;
+      width: 100%;
+      min-height: 100vh;
+    }
+    .logo {
+        font-size: 29px;
+        }
+    .rc-home-img img {
+      max-width: 100%;
+      max-height: 300px;
+      height: auto;
+    }
+    .home-text h1 {
+      font-size: 3rem;
+      margin: 2rem 0;
+    }
+    .home-text h2 {
+      font-size: 1.5rem;
+      margin: 1rem 0 2rem;
+    }
+    .rc-products,
+    .rc-courses {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .rc-products-img img,
+    .rc-courses-img img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
     }
 
-}
-
-@media (max-width: 575px) {
-    .rc-col {
-        width: 100%;
-    }
-}
+    .rc-main {
+        display: flex;
+        flex-direction: column;
+        }
+        
+        .rc-col {
+        margin-bottom: 1rem;
+        }
+        
+        .rc-col:last-child {
+        margin-bottom: 0;
+        }
+        
+        .rc-footer ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        }
+        
+        .rc-footer h4 {
+        margin-bottom: 0.5rem;
+        } 
+    
+  }
+  
